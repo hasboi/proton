@@ -1,11 +1,15 @@
 # Proton.sh
 
-Proton.sh adalah sebuah tool sederhana yang membantu kamu dalam manajemen tugas, pengingat, dan fokus belajar, terutama untuk persiapan UTBK. Jika kamu baru mengenal Git atau belum familiar dengan cara menggunakannya, jangan khawatir! README ini akan memandu kamu untuk menginstal dan menggunakan Proton.sh.
+Proton.sh adalah sebuah tool sederhana yang membantu kamu dalam manajemen tugas, pengingat, dan fokus belajar, terutama untuk persiapan UTBK. Jika kamu baru mengenal Git atau belum familiar dengan cara menggunakannya, README bakal memandu kamu untuk menginstal dan menggunakan Proton.sh.
 
 ## Persyaratan
-- **Bash**: Proton.sh bekerja pada terminal berbasis Bash.
+## Persyaratan
+- **Bash**: Proton.sh bekerja pada terminal berbasis Bash. Jika kamu menggunakan sistem operasi:
+  - **Linux** atau **macOS**: Bash biasanya sudah terpasang secara bawaan.
+  - **Windows**: Kamu bisa menginstal Bash melalui **Windows Subsystem for Linux (WSL)**. Langkah-langkah instalasinya ada di [sini](https://docs.microsoft.com/en-us/windows/wsl/install). Atau, kamu bisa menggunakan terminal seperti **Git Bash**, yang dapat diunduh di [sini](https://gitforwindows.org/).
+  
 - **Git**: Jika kamu belum menginstal Git, kamu bisa unduh di [sini](https://git-scm.com/).
-- **Powershell**: Dibutuhkan untuk beberapa fungsi pengingat di sistem berbasis Windows.
+- **Powershell**: Dibutuhkan untuk beberapa fungsi pengingat di sistem berbasis Windows, dan biasanya sudah ada secara default di Windows.
 
 ## Cara Instalasi
 
