@@ -118,6 +118,7 @@ function proton() {
             echo -e "\033[33m📋 proton task {add|view|delete} : Tambah, lihat, atau hapus tugas\033[0m"
             echo -e "\033[33m🔕 proton focus <menit> : Mode fokus selama X menit\033[0m"
             echo -e "\033[33m💤 proton break <menit> : Mode istirahat selama X menit\033[0m"
+            echo -e "\033[33m🧺 proton uninstall : Uninstall proton\033[0m"
             ;;
 
         
