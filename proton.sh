@@ -125,6 +125,9 @@ function proton() {
         *)
             echo -e "\033[31m⚠️  Perintah tidak dikenal. Coba 'proton help' untuk panduan.\033[0m"
             ;;
+        
+        version)
+            echo -e "\033[36m⚡ Proton versi 1.0 - Initial release\033[0m"
     esac
 }
 

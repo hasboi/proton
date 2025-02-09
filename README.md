@@ -22,21 +22,15 @@ Proton.sh adalah sebuah tool sederhana yang membantu kamu dalam manajemen tugas,
 
    Ini akan mengunduh semua file Proton.sh ke komputer kamu.
 
-2. **Jalankan Script Instalasi**
+2. **Aktivasi Proton**
    
-   Setelah repository berhasil diunduh, masuk ke direktori `proton` dan jalankan script instalasi:
+   Setelah repository berhasil diunduh, masuk ke direktori `proton` dan jalankan script aktivasi:
    ```bash
    cd proton
    bash install.sh
    ```
 
-3. **Aktifkan Proton**
-   
-   Setelah instalasi selesai, kamu bisa menutup dan membuka kembali terminal kamu, atau jalankan:
-   ```bash
-   source ~/.bashrc
-   ```
-   Ini akan memuat Proton.sh ke terminal kamu, sehingga kamu bisa langsung menggunakannya.
+   Habis itu udah deh! Kalian bisa ngecek kalau protonnya udah terinstall dengan mengetik `proton version`
 
 ## Perintah-perintah Proton
 
