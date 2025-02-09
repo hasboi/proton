@@ -128,6 +128,7 @@ function proton() {
         
         version)
             echo -e "\033[36m⚡ Proton versi 1.0 - Initial release\033[0m"
+            ;;
     esac
 }
 
