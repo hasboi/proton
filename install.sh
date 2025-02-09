@@ -18,10 +18,9 @@ if ! grep -Fxq "$SOURCE_LINE" "$BASHRC_FILE"; then
     
     echo "$SOURCE_LINE" >> "$BASHRC_FILE"
     echo -e "${GREEN}✅ Baris 'source $PROTON_DIR' berhasil ditambahkan ke $BASHRC_FILE${RESET}"
-    echo -e "${YELLOW}✨ Proton siap digunakan! Jangan lupa untuk menutup dan membuka kembali terminal, atau jalankan '${CYAN}source ~/.bashrc${YELLOW}' untuk mulai mengaktifkan Proton.${RESET}"
+    echo -e "${YELLOW}✨ Proton siap digunakan! Jangan lupa untuk menjalankan '${CYAN}source ~/.bashrc${YELLOW}' dan menutup dan membuka kembali terminal untuk mulai mengaktifkan Proton.${RESET}"
 else
     echo -e "${YELLOW}⚠️  Baris 'source $PROTON_DIR' sudah ada di $BASHRC_FILE.${RESET}"
-    echo -e "${CYAN}😊 Proton sudah siap digunakan sebelumnya.${RESET}"
 fi
 
 echo -e "${GREEN}🚀 Instalasi selesai!${RESET}"

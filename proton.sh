@@ -121,14 +121,14 @@ function proton() {
             echo -e "\033[33m🗑 proton uninstall : Uninstall proton\033[0m"
             ;;
 
+        version)
+            echo -e "\033[36m⚡ Proton versi 1.0 - Initial release\033[0m"
+            ;;
         
         *)
             echo -e "\033[31m⚠️  Perintah tidak dikenal. Coba 'proton help' untuk panduan.\033[0m"
             ;;
         
-        version)
-            echo -e "\033[36m⚡ Proton versi 1.0 - Initial release\033[0m"
-            ;;
     esac
 }
 
@@ -207,7 +207,7 @@ function uninstall_proton() {
 
         echo -e "\033[32m✅ Baris source Proton berhasil dihapus dari \033[91m.bashrc\033[0m"
         echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
-        echo -e "\033[32m✅ Terima kasih sudah sempat menggunakan Proton! \033[0m"
+        echo -e "\033[36m🌟 Terima kasih sudah sempat menggunakan Proton! \033[0m"
     else
         echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
