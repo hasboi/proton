@@ -172,7 +172,7 @@ function show_utbk_schedule() {
 
 
 function utbk_countdown() {
-    local exam_date="2025-05-20"
+    local exam_date="2025-04-23"
     local today=$(date +"%Y-%m-%d")
     local diff=$(( ($(date -d "$exam_date" +%s) - $(date -d "$today" +%s)) / 86400 ))
     
