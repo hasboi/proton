@@ -189,7 +189,7 @@ function uninstall_proton() {
     read -p "> " confirmation
     if [[ "$confirmation" == "y" || "$confirmation" == "Y" ]]; then
         # Tentukan folder Proton di home directory
-        PROTON_DIR="$HOME/.proton"
+        PROTON_DIR="$HOME/proton"
         
         # Hapus folder Proton
         if [ -d "$PROTON_DIR" ]; then
