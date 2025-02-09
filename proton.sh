@@ -188,9 +188,8 @@ function uninstall_proton() {
     read -p "> " confirmation
     if [[ "$confirmation" == "y" || "$confirmation" == "Y" ]]; then
         PROTON_DIR="$HOME/proton"
-        NOX_DIR="$HOME/.nox"
 
-        
+        # Hapus direktori Proton jika ada
         if [ -d "$PROTON_DIR" ]; then
             rm -rf "$PROTON_DIR"
             echo -e "\033[32m✅ Folder Proton berhasil dihapus dari \033[91m$PROTON_DIR\033[0m"
@@ -198,20 +197,12 @@ function uninstall_proton() {
             echo -e "\033[31m🚫 Folder Proton tidak ditemukan di \033[91m$HOME\033[0m"
         fi
 
-        if [ -d "$NOX_DIR" ]; then
-            rm -rf "$NOX_DIR"
-            echo -e "\033[32m✅ Folder .nox berhasil dihapus dari \033[91m$NOX_DIR\033[0m"
-        else
-            echo -e "\033[31m🚫 Folder .nox tidak ditemukan di \033[91m$HOME\033[0m"
-        fi
+        # Hapus baris source proton.sh dari file .bashrc
+        sed -i '/source ~\/proton\/proton.sh/d' "$HOME/.bashrc"
 
-        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.bashrc" 2>/dev/null
-        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.zshrc" 2>/dev/null
-        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.config/fish/config.fish" 2>/dev/null
-        
-        echo -e "\033[32m✅ Semua entri yang terkait dengan Proton berhasil dihapus dari file konfigurasi shell.\033[0m"
+        echo -e "\033[32m✅ Baris source Proton berhasil dihapus dari \033[91m.bashrc\033[0m"
+        echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
     else
         echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
 }
-
