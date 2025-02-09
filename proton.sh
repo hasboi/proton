@@ -165,14 +165,18 @@ function show_utbk_today() {
 
 
 function show_utbk_schedule() {
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    RESET='\033[0m'
+
     echo -e "\033[94m📅 Jadwal UTBK:\033[0m"
-    echo "1. Senin: Penalaran Kuantitatif (PK)"
-    echo "2. Selasa: Penalaran Umum (PU)"
-    echo "3. Rabu: Pengetahuan dan Pemahaman Umum"
-    echo "4. Kamis: Kemampuan memahami bacaan dan menulis"
-    echo "5. Jumat: Literasi bahasa Indonesia"
-    echo "6. Sabtu: Literasi bahasa Inggris"
-    echo "7. Minggu: Penalaran matematika"
+    echo -e "${YELLOW}1. Senin:${RESET} ${BLUE}Penalaran Kuantitatif (PK)${RESET}"
+    echo -e "${YELLOW}2. Selasa:${RESET} ${BLUE}Penalaran Umum (PU)${RESET}"
+    echo -e "${YELLOW}3. Rabu:${RESET} ${BLUE}Pengetahuan dan Pemahaman Umum${RESET}"
+    echo -e "${YELLOW}4. Kamis:${RESET} ${BLUE}Kemampuan memahami bacaan dan menulis${RESET}"
+    echo -e "${YELLOW}5. Jumat:${RESET} ${BLUE}Literasi bahasa Indonesia${RESET}"
+    echo -e "${YELLOW}6. Sabtu:${RESET} ${BLUE}Literasi bahasa Inggris${RESET}"
+    echo -e "${YELLOW}7. Minggu:${RESET} ${BLUE}Penalaran matematika${RESET}"
 }
 
 
