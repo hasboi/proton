@@ -1,9 +1,9 @@
-#!/bin/bash
 
-# File Todo di home directory
+
+
 TODO_FILE="$HOME/todo_list.txt"
 
-# Jika file belum ada, buat file todo_list.txt
+
 if [ ! -f "$TODO_FILE" ]; then
     touch "$TODO_FILE"
     echo -e "\033[35m📝 File \033[32m'todo_list.txt' \033[35mtelah dibuat di \033[32m$HOME\033[0m"
@@ -11,7 +11,7 @@ fi
 
 function proton() {
     case "$1" in
-        # Bagian untuk UTBK
+        
         utbk)
             case "$2" in
                 today)
@@ -34,7 +34,7 @@ function proton() {
             uninstall_proton
             ;;
 
-        # Pengingat
+        
         remind)
             if [ -z "$2" ] || [ -z "$3" ]; then
                 echo -e "\033[31m⚠️  Penggunaan: proton remind <tugas> <menit>\033[0m"
@@ -46,7 +46,7 @@ function proton() {
             fi
             ;;
 
-        # Task Management
+        
         task)
             case "$2" in
                 add)
@@ -86,7 +86,7 @@ function proton() {
             esac
             ;;
 
-        # Mode Fokus
+        
         focus)
             if [ -z "$2" ]; then
                 echo -e "\033[31m⚠️  Penggunaan: proton focus <menit>\033[0m"
@@ -97,7 +97,7 @@ function proton() {
             fi
             ;;
 
-        # Mode Istirahat
+        
         break)
             if [ -z "$2" ]; then
                 echo -e "\033[31m⚠️  Penggunaan: proton break <menit>\033[0m"
@@ -108,7 +108,7 @@ function proton() {
             fi
             ;;
 
-        # Bantuan
+        
         help)
             echo -e "\033[36m📜 Panduan Perintah proton:\033[0m"
             echo -e "\033[33m✨ proton utbk today  : Tampilkan jadwal UTBK hari ini\033[0m"
@@ -120,14 +120,14 @@ function proton() {
             echo -e "\033[33m💤 proton break <menit> : Mode istirahat selama X menit\033[0m"
             ;;
 
-        # Jika perintah tidak dikenali
+        
         *)
             echo -e "\033[31m⚠️  Perintah tidak dikenal. Coba 'proton help' untuk panduan.\033[0m"
             ;;
     esac
 }
 
-# Fungsi untuk menampilkan jadwal UTBK hari ini
+
 function show_utbk_today() {
     local today=$(date +"%A")
     case "$today" in
@@ -158,7 +158,7 @@ function show_utbk_today() {
     esac
 }
 
-# Fungsi untuk menampilkan jadwal UTBK penuh
+
 function show_utbk_schedule() {
     echo -e "\033[94m📅 Jadwal UTBK:\033[0m"
     echo "1. Senin: Penalaran Kuantitatif (PK)"
@@ -170,7 +170,7 @@ function show_utbk_schedule() {
     echo "7. Minggu: Penalaran matematika"
 }
 
-# Fungsi untuk menampilkan countdown UTBK
+
 function utbk_countdown() {
     local exam_date="2025-05-20"
     local today=$(date +"%Y-%m-%d")
@@ -183,15 +183,14 @@ function utbk_countdown() {
     fi
 }
 
-# Fungsi untuk meng-uninstall Proton
 function uninstall_proton() {
     echo -e "\033[93m⚠️  Apakah kamu yakin ingin menghapus Proton sepenuhnya? (y/n)\033[0m"
     read -p "> " confirmation
     if [[ "$confirmation" == "y" || "$confirmation" == "Y" ]]; then
-        # Tentukan folder Proton di home directory
         PROTON_DIR="$HOME/proton"
+        NOX_DIR="$HOME/.nox"
+
         
-        # Hapus folder Proton
         if [ -d "$PROTON_DIR" ]; then
             rm -rf "$PROTON_DIR"
             echo -e "\033[32m✅ Folder Proton berhasil dihapus dari \033[91m$PROTON_DIR\033[0m"
@@ -199,7 +198,13 @@ function uninstall_proton() {
             echo -e "\033[31m🚫 Folder Proton tidak ditemukan di \033[91m$HOME\033[0m"
         fi
 
-        # Hapus entri di .bashrc, .zshrc, dan fish config
+        if [ -d "$NOX_DIR" ]; then
+            rm -rf "$NOX_DIR"
+            echo -e "\033[32m✅ Folder .nox berhasil dihapus dari \033[91m$NOX_DIR\033[0m"
+        else
+            echo -e "\033[31m🚫 Folder .nox tidak ditemukan di \033[91m$HOME\033[0m"
+        fi
+
         sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.bashrc" 2>/dev/null
         sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.zshrc" 2>/dev/null
         sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.config/fish/config.fish" 2>/dev/null
@@ -209,3 +214,4 @@ function uninstall_proton() {
         echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
 }
+
