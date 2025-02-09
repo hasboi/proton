@@ -185,16 +185,26 @@ function utbk_countdown() {
 
 # Fungsi untuk meng-uninstall Proton
 function uninstall_proton() {
-    echo -e "\033[93m⚠️  Apakah kamu yakin ingin menghapus Proton? (y/n)\033[0m"
+    echo -e "\033[93m⚠️  Apakah kamu yakin ingin menghapus Proton sepenuhnya? (y/n)\033[0m"
     read -p "> " confirmation
     if [[ "$confirmation" == "y" || "$confirmation" == "Y" ]]; then
-        # Hapus file dan folder yang terkait dengan Proton
-        rm -rf "$HOME/.nox"
-        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.bashrc" 2>/dev/null
-        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.zshrc" 2>/dev/null
-        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.config/fish/config.fish" 2>/dev/null
+        # Tentukan folder Proton di home directory
+        PROTON_DIR="$HOME/.proton"
         
-        echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
+        # Hapus folder Proton
+        if [ -d "$PROTON_DIR" ]; then
+            rm -rf "$PROTON_DIR"
+            echo -e "\033[32m✅ Folder Proton berhasil dihapus dari \033[91m$PROTON_DIR\033[0m"
+        else
+            echo -e "\033[31m🚫 Folder Proton tidak ditemukan di \033[91m$HOME\033[0m"
+        fi
+
+        # Hapus entri di .bashrc, .zshrc, dan fish config
+        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.bashrc" 2>/dev/null
+        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.zshrc" 2>/dev/null
+        sed -i '/source \$HOME\/\.proton\/proton.sh/d' "$HOME/.config/fish/config.fish" 2>/dev/null
+        
+        echo -e "\033[32m✅ Semua entri yang terkait dengan Proton berhasil dihapus dari file konfigurasi shell.\033[0m"
     else
         echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
