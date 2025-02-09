@@ -118,7 +118,7 @@ function proton() {
             echo -e "\033[33m📋 proton task {add|view|delete} : Tambah, lihat, atau hapus tugas\033[0m"
             echo -e "\033[33m🔕 proton focus <menit> : Mode fokus selama X menit\033[0m"
             echo -e "\033[33m💤 proton break <menit> : Mode istirahat selama X menit\033[0m"
-            echo -e "\033[33m🧺 proton uninstall : Uninstall proton\033[0m"
+            echo -e "\033[33m🗑 proton uninstall : Uninstall proton\033[0m"
             ;;
 
         
@@ -207,6 +207,7 @@ function uninstall_proton() {
 
         echo -e "\033[32m✅ Baris source Proton berhasil dihapus dari \033[91m.bashrc\033[0m"
         echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
+        echo -e "\033[32m✅ Terima kasih sudah sempat menggunakan Proton! \033[0m"
     else
         echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
