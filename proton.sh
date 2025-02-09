@@ -118,12 +118,31 @@ function proton() {
             echo -e "\033[33m📋 proton task {add|view|delete} : Tambah, lihat, atau hapus tugas\033[0m"
             echo -e "\033[33m🔕 proton focus <menit> : Mode fokus selama X menit\033[0m"
             echo -e "\033[33m💤 proton break <menit> : Mode istirahat selama X menit\033[0m"
+            echo -e "\033[33m⏳ proton countdown <detik> : Metode fokus dengan menghitung mundur selama X detik\033[0m"
             echo -e "\033[33m🗑 proton uninstall : Uninstall proton\033[0m"
             ;;
 
         version)
             echo -e "\033[33m⚡ Proton versi 1.0 - Initial release\033[0m"
             ;;
+        
+        countdown)
+            if [ -z "$2" ]; then
+                echo -e "\033[31m⚠️  Penggunaan: proton countdown <detik>\033[0m"
+            else
+                local seconds=$2
+                echo -e "\033[33m⏳ Hitung mundur dimulai selama \033[91m$seconds detik\033[0m"
+                
+                # Loop countdown
+                while [ $seconds -gt 0 ]; do
+                    echo -ne "\r\033[36m$seconds detik tersisa...\033[0m"
+                    sleep 1
+                    seconds=$((seconds - 1))
+                done
+                echo -e "\n\033[32m✅ Waktu habis!\033[0m"
+            fi
+            ;;
+        
         
         *)
             echo -e "\033[31m⚠️  Perintah tidak dikenal. Coba 'proton help' untuk panduan.\033[0m"
