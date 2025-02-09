@@ -13,18 +13,24 @@ Proton.sh adalah sebuah tool sederhana yang membantu kamu dalam manajemen tugas,
 ## Cara Instalasi
 
 1. **Clone repository Proton.sh**  
-   Pertama, kamu perlu mengunduh (clone) repository ini ke komputer kamu. Jika kamu belum pernah menggunakan git sebelumnya, ikuti langkah-langkah berikut:
+   Pertama, kamu perlu mengunduh atau meng-clone repository ini ke komputer kamu. 
+   Lalu buka terminal, lalu jalankan perintah berikut:
    
    Buka terminal dan jalankan perintah berikut:
    ```bash
    git clone https://github.com/hasboi/proton.git
    ```
 
-   Ini akan mengunduh semua file Proton.sh ke komputer kamu.
+   **Apa yang terjadi setelah ini?**
+      - Komputer akan mulai mengunduh Proton. Tidak ada progress bar yang dramatis seperti di film hacker, tapi ya, tetap saja ini bagian penting.
+      - Setelah selesai, semua file Proton akan tersimpan di komputer kamu.
+  
+  Kalau error muncul? Bisa jadi Git belum terinstall, atau ada yang salah ketik
 
 2. **Aktivasi Proton**
    
-   Setelah repository berhasil diunduh, masuk ke direktori `proton` dan jalankan script aktivasi:
+  Sekarang, kita harus "menghidupkan" Proton supaya bisa digunakan. Jalankan saja perintah ini:
+
    ```bash
    cd proton
    bash install.sh
