@@ -29,6 +29,10 @@ function proton() {
                     ;;
             esac
             ;;
+        
+        uninstall)
+            uninstall_proton
+            ;;
 
         # Pengingat
         remind)
@@ -176,5 +180,22 @@ function utbk_countdown() {
         echo -e "\033[31m🚫 UTBK sudah selesai!\033[0m"
     else
         echo -e "\033[93m⏳ UTBK dimulai dalam \033[91m$diff hari.\033[0m"
+    fi
+}
+
+# Fungsi untuk meng-uninstall Proton
+function uninstall_proton() {
+    echo -e "\033[93m⚠️  Apakah kamu yakin ingin menghapus Proton? (y/n)\033[0m"
+    read -p "> " confirmation
+    if [[ "$confirmation" == "y" || "$confirmation" == "Y" ]]; then
+        # Hapus file dan folder yang terkait dengan Proton
+        rm -rf "$HOME/.nox"
+        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.bashrc" 2>/dev/null
+        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.zshrc" 2>/dev/null
+        sed -i '/source \$HOME\/\.nox\/proton.sh/d' "$HOME/.config/fish/config.fish" 2>/dev/null
+        
+        echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
+    else
+        echo -e "\033[33m🚫 Proton tidak dihapus.\033[0m"
     fi
 }
