@@ -122,7 +122,7 @@ function proton() {
             ;;
 
         version)
-            echo -e "\033[36m⚡ Proton versi 1.0 - Initial release\033[0m"
+            echo -e "\033[33m⚡ Proton versi 1.0 - Initial release\033[0m"
             ;;
         
         *)
