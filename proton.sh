@@ -197,8 +197,8 @@ function uninstall_proton() {
             echo -e "\033[31m🚫 Folder Proton tidak ditemukan di \033[91m$HOME\033[0m"
         fi
 
-        # Hapus baris source proton.sh dari file .bashrc
-        sed -i '/source ~\/proton\/proton.sh/d' "$HOME/.bashrc"
+        # Hapus baris yang mengandung source <path>/proton.sh dari file .bashrc
+        sed -i '/source .*\/proton\/proton.sh/d' "$HOME/.bashrc"
 
         echo -e "\033[32m✅ Baris source Proton berhasil dihapus dari \033[91m.bashrc\033[0m"
         echo -e "\033[32m✅ Proton berhasil dihapus dari sistemmu.\033[0m"
